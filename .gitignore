@@ -1,0 +1,73 @@
+# -------------------------------------------------------------------------------------
+# 1. Project/Solution Specific Folders (Build Artifacts & Dependencies)
+# -------------------------------------------------------------------------------------
+
+# Exclude all 'bin' and 'obj' directories.
+# These contain compiled executables, temporary files, and intermediate build results.
+[Bb]in/
+[Oo]bj/
+
+# Exclude the 'TestResults' directory created by unit testing.
+[Tt]est[Rr]esults/
+
+# Exclude NuGet package cache and generated files.
+# Packages downloaded locally for the solution (usually restored by NuGet on build).
+[Pp]ackages/
+**/*.nupkg
+**/*.snupkg
+
+# Exclude generated code coverage files
+*.coverage
+*.opencover
+
+# -------------------------------------------------------------------------------------
+# 2. Visual Studio and VS Code Artifacts (IDE-Specific Files)
+# -------------------------------------------------------------------------------------
+
+# Visual Studio files:
+# The solution's hidden .vs folder (user-specific settings and cache).
+.vs/
+# User-specific solution options file.
+*.suo
+
+# Project user options file (often holds per-user settings, like start-up projects).
+*.csproj.user
+*.vbproj.user
+*.sln.docstates
+
+# Files created by various Visual Studio tools
+# Resharper/Rider settings, backup files, etc.
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.log
+*.ncb
+*.pdb
+*.aps
+
+# Visual Studio Code settings and workspace
+.vscode/
+
+# -------------------------------------------------------------------------------------
+# 3. Operating System / Other Common Files
+# -------------------------------------------------------------------------------------
+
+# MacOS
+.DS_Store
+# Windows (Thumbnails, desktop configs, etc.)
+Thumbs.db
+desktop.ini
+
+# -------------------------------------------------------------------------------------
+# 4. Global Tooling and Temp Files
+# -------------------------------------------------------------------------------------
+
+# Temporary files created by editors
+*~
+# Logs
+*.log
+
+# Example for a specific tool (if you use it)
+# StyleCop.Analyzers/CodeMaid etc.
+# CodeMaid.config
