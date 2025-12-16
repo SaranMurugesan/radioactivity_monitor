@@ -14,19 +14,17 @@ The RadioActivity Monitor is designed to detect unsafe radioactivity levels in r
 
 ```
 RadioactivityMonitor/
-├── Program.cs                 # Main entry point - runs unit tests
-├── RadioactivityMonitor.csproj
-├── RadioactivityMonitor.sln
+├── Program.cs                 # Run the app
 │
 ├── Contract/                  # Interface definitions
 │   ├── IAlarm.cs             # Alarm interface
 │   └── ISensor.cs            # Sensor interface
 │
 ├── Service/                   # Core implementations
-│   ├── Alarm.cs              # Alarm logic with threshold checking
-│   └── Sensor.cs             # Radioactivity sensor implementation
+│   ├── Alarm.cs              # Alarm implementation
+│   └── Sensor.cs             # Sensor implementation
 │
-└── UnitTests/                 # Test suite
+└── UnitTests/
     ├── AlarmTests.cs         # Alarm behavior tests
     ├── AssertionHelper.cs     # Custom assertion utilities
     └── MockSensor.cs         # Mock sensor for testing
