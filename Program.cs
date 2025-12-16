@@ -4,7 +4,7 @@ using RadioactivityMonitor.UnitTests;
 Console.WriteLine("Press 1 to check the Radioactivity Monitor Alarm.");
 Console.WriteLine("Press 2 to run the Radioactivity Monitor Alarm Tests.");
 var selectedOption = Console.ReadLine() ?? string.Empty;
-switch(selectedOption.Trim())
+switch (selectedOption.Trim())
 {
     case "1":
         CheckAlarm();
@@ -20,10 +20,10 @@ switch(selectedOption.Trim())
 static void CheckAlarm()
 {
     Console.WriteLine("<---- Checking Radioactivity Monitor Alarm  ---->");
+    var sensor = new Sensor();
+    var alarm = new Alarm(sensor);
     while (true)
     {
-        var sensor = new Sensor();
-        var alarm = new Alarm(sensor);
         alarm.Check();
         Console.WriteLine($"Radioactivity Monitor Alarm Status: {(alarm.AlarmOn ? "ON" : "OFF")}");
         Console.WriteLine("Do you want to check Radioactivity Monitor Alarm again? (y/n)");

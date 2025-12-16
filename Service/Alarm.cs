@@ -10,7 +10,6 @@ namespace RadioactivityMonitor.Service
         bool _alarmOn = false;
         private long _alarmCount = 0;
 
-
         public void Check()
         {
             double value = sensor.NextMeasure();
@@ -27,6 +26,10 @@ namespace RadioactivityMonitor.Service
             {
                 _alarmOn = true;
                 _alarmCount += 1;
+            }
+            else // Reset alarm if within range
+            {
+                _alarmOn = false;
             }
         }
 
