@@ -2,13 +2,20 @@ using RadioactivityMonitor.src.Contract;
 
 namespace RadioactivityMonitor.src.Service
 {
+    // We can use DI in future to inject different sensor implementations
     public class Alarm(ISensor sensor) : IAlarm
     {
+        // In future we might want to make these thresholds configurable
+        // so can keep in appsettings or fetch from db
         private const double LowThreshold = 17;
         private const double HighThreshold = 21;
 
+        // To avoid tight coupling providing the dependencies from outside
+        // Sensor _sensor = new Sensor();
+
         bool _alarmOn = false;
-        private long _alarmCount = 0;
+        // We are not using _alarmCount anywhere, so commenting it out
+        // private long _alarmCount = 0;
 
         public void Check()
         {
@@ -25,7 +32,6 @@ namespace RadioactivityMonitor.src.Service
             if (value < LowThreshold || value > HighThreshold)
             {
                 _alarmOn = true;
-                _alarmCount += 1;
             }
         }
 
