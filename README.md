@@ -89,5 +89,5 @@ docker run -it --entrypoint sh radioactivity_monitor:latest
 dotnet RadioactivityMonitor.dll
 ```
 ### Example screenshots
-![Check Alarm Status](images/check_alarm.png)
-![Run Alaram Tests](images/run_alarm_tests.png)
+![Check Alarm Status](assets/check_alarm.png)
+![Run Alaram Tests](assets/run_alarm_tests.png)
