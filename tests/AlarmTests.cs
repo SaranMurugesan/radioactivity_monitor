@@ -1,7 +1,6 @@
-using RadioactivityMonitor.Contract;
-using RadioactivityMonitor.Service;
+using RadioactivityMonitor.src.Service;
 
-namespace RadioactivityMonitor.UnitTests
+namespace RadioactivityMonitor.tests
 {
     public class AlarmTests
     {
@@ -16,12 +15,11 @@ namespace RadioactivityMonitor.UnitTests
         private void Test_Alarm_Should_Be_Off_When_Measurement_Is_Within_Range()
         {
             // Arrange
-            double normalMeasurement = 19.0; // Between 17 and 21
-            var alarm = CreateAlarmWithMockSensor(normalMeasurement);
+            var alarm = CreateAlarmWithMockSensor(19.0); // Between 17 and 21
             // Act
             alarm.Check();
             // Assert
-            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, $"Failed: Test Method {nameof(Test_Alarm_Should_Be_Off_When_Measurement_Is_Within_Range)} Alarm should be off when measurement is {normalMeasurement}"));
+            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, nameof(Test_Alarm_Should_Be_Off_When_Measurement_Is_Within_Range)));
         }
 
         ///<summary>
@@ -30,55 +28,51 @@ namespace RadioactivityMonitor.UnitTests
         private void Test_Alarm_Should_Be_On_When_Measurement_Is_Below_Low_Threshold()
         {
             // Arrange
-            double lowMeasurement = 16.5; // Below 17
-            var alarm = CreateAlarmWithMockSensor(lowMeasurement);
+            var alarm = CreateAlarmWithMockSensor(16.5); // Below 17
             // Act
             alarm.Check();
             // Assert
-            Assert(() => AssertionHelper.AssertTrue(alarm.AlarmOn, $"Failed: Test Method {nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Below_Low_Threshold)} Alarm should be on when measurement is {lowMeasurement}"));
+            Assert(() => AssertionHelper.AssertTrue(alarm.AlarmOn, nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Below_Low_Threshold)));
 
         }
 
         ///<summary>
-        /// Tests that the alarm is on when the measurement is below the low threshold.
+        /// Tests that the alarm is on when the measurement is above the high threshold.
         /// </summary>
         private void Test_Alarm_Should_Be_On_When_Measurement_Is_Above_High_Threshold()
         {
             // Arrange
-            double highMeasurement = 21.5; // Above 21
-            var alarm = CreateAlarmWithMockSensor(highMeasurement);
+            var alarm = CreateAlarmWithMockSensor(21.5);
             // Act
             alarm.Check();
             // Assert
-            Assert(() => AssertionHelper.AssertTrue(alarm.AlarmOn, $"Failed: Test Method {nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Above_High_Threshold)} Alarm should be on when measurement is {highMeasurement}"));
+            Assert(() => AssertionHelper.AssertTrue(alarm.AlarmOn, nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Above_High_Threshold)));
         }
 
         ///<summary>
-        /// Tests that the alarm is on when the measurement is below the low threshold.
+        /// Tests that the alarm is on when the measurement is equal to the low threshold.
         /// </summary>
         private void Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_Low_Threshold()
         {
             // Arrange
-            double equalLowMeasurement = 17; // Equal to Low Threshold 17
-            var alarm = CreateAlarmWithMockSensor(equalLowMeasurement);
+            var alarm = CreateAlarmWithMockSensor(17);// Equal to Low Threshold 17
             // Act
             alarm.Check();
             // Assert
-            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, $"Failed: Test Method {nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_Low_Threshold)} Alarm should be off when measurement is {equalLowMeasurement}"));
+            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_Low_Threshold)));
         }
 
         ///<summary>
-        /// Tests that the alarm is on when the measurement is below the low threshold.
+        /// Tests that the alarm is on when the measurement is equal to the high threshold.
         /// </summary>
         private void Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_High_Threshold()
         {
             // Arrange
-            double equalHighMeasurement = 21; // Equal to High Threshold 21
-            var alarm = CreateAlarmWithMockSensor(equalHighMeasurement);
+            var alarm = CreateAlarmWithMockSensor(21); // Equal to High Threshold 21
             // Act
             alarm.Check();
             // Assert
-            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, $"Failed: Test Method {nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_High_Threshold)} Alarm should be off when measurement is {equalHighMeasurement}."));
+            Assert(() => AssertionHelper.AssertFalse(alarm.AlarmOn, nameof(Test_Alarm_Should_Be_On_When_Measurement_Is_Equal_High_Threshold)));
         }
 
         private static Alarm CreateAlarmWithMockSensor(double measurement)

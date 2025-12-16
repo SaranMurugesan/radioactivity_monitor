@@ -1,6 +1,6 @@
-using RadioactivityMonitor.Contract;
+using RadioactivityMonitor.src.Contract;
 
-namespace RadioactivityMonitor.Service
+namespace RadioactivityMonitor.src.Service
 {
     public class Sensor : ISensor
     {

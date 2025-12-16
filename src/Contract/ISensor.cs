@@ -1,4 +1,4 @@
-namespace RadioactivityMonitor.Contract
+namespace RadioactivityMonitor.src.Contract
 {
     public interface ISensor
     {

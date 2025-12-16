@@ -1,4 +1,4 @@
-namespace RadioactivityMonitor.UnitTests
+namespace RadioactivityMonitor.tests
 {
     public static class AssertionHelper
     {
@@ -6,13 +6,13 @@ namespace RadioactivityMonitor.UnitTests
         /// Asserts that the given condition is true.
         /// </summary>
         /// <param name="condition">The condition to check.</param>
-        /// <param name="message">The message to display if the assertion fails.</param>
+        /// <param name="methodName">The methodName to display if the assertion fails.</param>
         /// <exception cref="Exception"></exception>
-        public static void AssertTrue(bool condition, string message)
+        public static void AssertTrue(bool condition, string methodName)
         {
             if (!condition)
             {
-                throw new Exception($"Expected true but was false. {message}");
+                throw new Exception($"Failed: Test Method {methodName} - Expected true but was false");
             }
         }
 
@@ -20,13 +20,13 @@ namespace RadioactivityMonitor.UnitTests
         /// Asserts that the given condition is false.
         /// </summary>
         /// <param name="condition">The condition to check.</param>
-        /// <param name="message">The message to display if the assertion fails.</param>
+        /// <param name="methodName">The methodName to display if the assertion fails.</param>
         /// <exception cref="Exception"></exception>
-        public static void AssertFalse(bool condition, string message)
+        public static void AssertFalse(bool condition, string methodName)
         {
             if (condition)
             {
-                throw new Exception($"Expected false but was true. {message}");
+                throw new Exception($"Failed: Test Method {methodName} - Expected false but was true.");
             }
         }
     }

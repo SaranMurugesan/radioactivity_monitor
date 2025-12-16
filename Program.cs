@@ -1,5 +1,5 @@
-﻿using RadioactivityMonitor.Service;
-using RadioactivityMonitor.UnitTests;
+﻿using RadioactivityMonitor.src.Service;
+using RadioactivityMonitor.tests;
 
 Console.WriteLine("Press 1 to check the Radioactivity Monitor Alarm.");
 Console.WriteLine("Press 2 to run the Radioactivity Monitor Alarm Tests.");
@@ -20,10 +20,10 @@ switch (selectedOption.Trim())
 static void CheckAlarm()
 {
     Console.WriteLine("<---- Checking Radioactivity Monitor Alarm  ---->");
-    var sensor = new Sensor();
-    var alarm = new Alarm(sensor);
     while (true)
     {
+        var sensor = new Sensor();
+        var alarm = new Alarm(sensor);
         alarm.Check();
         Console.WriteLine($"Radioactivity Monitor Alarm Status: {(alarm.AlarmOn ? "ON" : "OFF")}");
         Console.WriteLine("Do you want to check Radioactivity Monitor Alarm again? (y/n)");

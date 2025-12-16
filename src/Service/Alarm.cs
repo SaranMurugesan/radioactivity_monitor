@@ -1,6 +1,6 @@
-using RadioactivityMonitor.Contract;
+using RadioactivityMonitor.src.Contract;
 
-namespace RadioactivityMonitor.Service
+namespace RadioactivityMonitor.src.Service
 {
     public class Alarm(ISensor sensor) : IAlarm
     {
@@ -26,10 +26,6 @@ namespace RadioactivityMonitor.Service
             {
                 _alarmOn = true;
                 _alarmCount += 1;
-            }
-            else // Reset alarm if within range
-            {
-                _alarmOn = false;
             }
         }
 
