@@ -1,6 +1,8 @@
 using RadioactivityMonitor.src.Service;
+using RadioactivityMonitor.tests.Helper;
+using RadioactivityMonitor.tests.Mocks;
 
-namespace RadioactivityMonitor.tests
+namespace RadioactivityMonitor.tests.AlarmTests
 {
     public class AlarmTests
     {
@@ -81,6 +83,10 @@ namespace RadioactivityMonitor.tests
             return new Alarm(mockSensor);
         }
 
+        /// <summary>
+        /// Assertion wrapper to avoid repeating the same code.
+        /// </summary>
+        /// <param name="action"></param>
         private void Assert(Action action)
         {
             TestCount++;

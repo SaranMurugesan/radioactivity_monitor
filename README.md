@@ -10,22 +10,29 @@ The RadioActivity Monitor is designed to detect unsafe radioactivity levels in r
 ## Project Structure
 ```
 RadioactivityMonitor/
-├── Program.cs                 # Run the app
+├── Program.cs                      # Entry point - Run the app
 │
-├─- src/
-|   |
-|   Contract/                  # Interface definitions
-│      ├── IAlarm.cs             # Alarm interface
-│      └── ISensor.cs            # Sensor interface
-|   |
-|   Service/                   # Core implementations
-│   ├── Alarm.cs              # Alarm implementation
-│   └── Sensor.cs             # Sensor implementation
+├── src/                            # Source code
+│   ├── Contract/                   # Interface definitions
+│   │   ├── IAlarm.cs               # Alarm interface
+│   │   └── ISensor.cs              # Sensor interface
+│   │
+│   └── Service/                    # Core implementations
+│       ├── Alarm.cs                # Alarm implementation
+│       └── Sensor.cs               # Sensor implementation
 │
-└── tests/
-    ├── AlarmTests.cs         # Alarm behavior tests
-    ├── AssertionHelper.cs     # Custom assertion utilities
-    └── MockSensor.cs         # Mock sensor for testing
+├── tests/                          # Unit tests and test utilities
+│   ├── AlarmTests/
+│   │   └── AlarmTests.cs           # Alarm behavior tests
+│   ├── Helper/
+│   │   └── AssertionHelper.cs      # Custom assertion utilities
+│   └── Mocks/
+│       └── MockSensor.cs           # Mock sensor for testing
+│
+├── Dockerfile                      # Docker configuration
+├── RadioactivityMonitor.csproj     # Project file
+├── RadioactivityMonitor.sln        # Solution file
+└── README.md                       # Project documentation
 ```
 
 

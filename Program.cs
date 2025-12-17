@@ -1,5 +1,5 @@
 ﻿using RadioactivityMonitor.src.Service;
-using RadioactivityMonitor.tests;
+using RadioactivityMonitor.tests.AlarmTests;
 
 Console.WriteLine("Press 1 to check the Radioactivity Monitor Alarm.");
 Console.WriteLine("Press 2 to run the Radioactivity Monitor Alarm Tests.");

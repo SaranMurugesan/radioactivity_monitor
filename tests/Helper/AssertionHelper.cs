@@ -1,4 +1,4 @@
-namespace RadioactivityMonitor.tests
+namespace RadioactivityMonitor.tests.Helper
 {
     public static class AssertionHelper
     {

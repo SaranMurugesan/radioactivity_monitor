@@ -1,6 +1,6 @@
 using RadioactivityMonitor.src.Contract;
 
-namespace RadioactivityMonitor.tests
+namespace RadioactivityMonitor.tests.Mocks
 {
     /// <summary>
     /// A mock sensor that always returns the passed measurement.
